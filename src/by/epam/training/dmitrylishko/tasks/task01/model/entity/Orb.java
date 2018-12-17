@@ -1,8 +1,9 @@
-package by.epam.training.dmitrylishko.task01.model.entity;
+package by.epam.training.dmitrylishko.tasks.task01.model.entity;
 
 import by.epam.training.dmitrylishko.task01.model.exceptions.NegativeRadiusException;
+import by.epam.training.dmitrylishko.tasks.task01.model.entity.Point3D;
 
-public class Orb extends Dot3D {
+public class Orb extends Point3D {
     public static final double DEFAULT_RADIUS = 1;
 
     private double radius;
@@ -22,8 +23,8 @@ public class Orb extends Dot3D {
         setRadius(radius);
     }
 
-    public Orb(Dot3D dot, double radius) {
-        super(dot);
+    public Orb(Point3D point, double radius) {
+        super(point);
         setRadius(radius);
     }
 

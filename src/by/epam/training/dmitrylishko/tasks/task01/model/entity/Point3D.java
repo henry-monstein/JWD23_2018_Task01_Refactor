@@ -1,9 +1,6 @@
-package by.epam.training.dmitrylishko.task01.model.entity;
+package by.epam.training.dmitrylishko.tasks.task01.model.entity;
 
-import java.awt.*;
-import java.util.Objects;
-
-public class Dot3D {
+public class Point3D {
     public static final double DEFAULT_X = 0;
     public static final double DEFAULT_Y = 0;
     public static final double DEFAULT_Z = 0;
@@ -12,20 +9,20 @@ public class Dot3D {
     private double y;
     private double z;
 
-    public Dot3D() {
+    public Point3D() {
         x = DEFAULT_X;
         y = DEFAULT_Y;
         z = DEFAULT_Z;
     }
 
-    public Dot3D(double x, double y, double z) {
+    public Point3D(double x, double y, double z) {
         setX(x);
         setY(y);
         setZ(z);
     }
 
-    public Dot3D(Dot3D dot) {
-        setLocation(dot);
+    public Point3D(Point3D point) {
+        setLocation(point);
     }
 
     public double getX() {
@@ -62,11 +59,8 @@ public class Dot3D {
         setZ(z);
     }
 
-    public void setLocation(Dot3D dot) {
-        if (dot == null) {
-            throw new NullPointerException();
-        }
-        setLocation(dot.getX(), dot.getY(), dot.getZ());
+    public void setLocation(Point3D point) {
+        setLocation(point.getX(), point.getY(), point.getZ());
     }
 
     @Override
@@ -74,11 +68,11 @@ public class Dot3D {
         if (this == o) return true;
         if (o == null) return false;
         if (hashCode() != o.hashCode()) return false;
-        if (!(o instanceof Dot3D)) return false;
-        Dot3D dot3D = (Dot3D) o;
-        return Double.compare(dot3D.x, x) == 0 &&
-                Double.compare(dot3D.y, y) == 0 &&
-                Double.compare(dot3D.z, z) == 0;
+        if (!(o instanceof Point3D)) return false;
+        Point3D point3D = (Point3D) o;
+        return Double.compare(point3D.x, x) == 0 &&
+                Double.compare(point3D.y, y) == 0 &&
+                Double.compare(point3D.z, z) == 0;
     }
 
     @Override
