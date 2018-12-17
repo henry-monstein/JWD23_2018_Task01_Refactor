@@ -3,33 +3,33 @@ package by.epam.training.dmitrylishko.tasks.task01.model.entity;
 import by.epam.training.dmitrylishko.task01.model.exceptions.NegativeRadiusException;
 import by.epam.training.dmitrylishko.tasks.task01.model.entity.Point3D;
 
-public class Orb extends Point3D {
+public class Sphere extends Point3D {
     public static final double DEFAULT_RADIUS = 1;
 
     private double radius;
 
-    public Orb() {
+    public Sphere() {
         super();
         radius = DEFAULT_RADIUS;
     }
 
-    public Orb(double radius) {
+    public Sphere(double radius) {
         super();
         setRadius(radius);
     }
 
-    public Orb(double x, double y, double z, double radius) {
+    public Sphere(double x, double y, double z, double radius) {
         super(x, y, z);
         setRadius(radius);
     }
 
-    public Orb(Point3D point, double radius) {
+    public Sphere(Point3D point, double radius) {
         super(point);
         setRadius(radius);
     }
 
-    public Orb(Orb orb) {
-        copy(orb);
+    public Sphere(Sphere sphere) {
+        copy(sphere);
     }
 
     public double getRadius() {
@@ -40,12 +40,9 @@ public class Orb extends Point3D {
         this.radius = radius;
     }
 
-    private void copy(Orb orb) {
-        if (orb == null) {
-            throw new NullPointerException();
-        }
-        setRadius(orb.radius);
-        super.setLocation(orb);
+    private void copy(Sphere sphere) {
+        setRadius(sphere.radius);
+        super.setLocation(sphere);
     }
 
     @Override
@@ -53,10 +50,10 @@ public class Orb extends Point3D {
         if (this == o) return true;
         if (o == null) return false;
         if (hashCode() != o.hashCode()) return false;
-        if (!(o instanceof Orb)) return false;
+        if (!(o instanceof Sphere)) return false;
         if (!super.equals(o)) return false;
-        Orb orb = (Orb) o;
-        return Double.compare(orb.radius, radius) == 0;
+        Sphere sphere= (Sphere) o;
+        return Double.compare(sphere.radius, radius) == 0;
     }
 
     @Override
