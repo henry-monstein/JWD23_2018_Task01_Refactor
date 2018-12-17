@@ -1,4 +1,4 @@
-package by.epam.training.dmitrylishko.task01.view;
+package by.epam.training.dmitrylishko.tasks.task01.view;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

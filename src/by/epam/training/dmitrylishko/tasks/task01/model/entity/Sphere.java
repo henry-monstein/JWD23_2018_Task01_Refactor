@@ -1,8 +1,5 @@
 package by.epam.training.dmitrylishko.tasks.task01.model.entity;
 
-import by.epam.training.dmitrylishko.task01.model.exceptions.NegativeRadiusException;
-import by.epam.training.dmitrylishko.tasks.task01.model.entity.Point3D;
-
 public class Sphere extends Point3D {
     public static final double DEFAULT_RADIUS = 1;
 
@@ -52,7 +49,7 @@ public class Sphere extends Point3D {
         if (hashCode() != o.hashCode()) return false;
         if (!(o instanceof Sphere)) return false;
         if (!super.equals(o)) return false;
-        Sphere sphere= (Sphere) o;
+        Sphere sphere = (Sphere) o;
         return Double.compare(sphere.radius, radius) == 0;
     }
 

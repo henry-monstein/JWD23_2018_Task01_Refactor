@@ -48,7 +48,7 @@ public class SphereCalculation {
     }
 
     private static void isNull(Sphere sphere) {
-        if (sphere== null) throw new NullPointerException();
+        if (sphere == null) throw new NullPointerException();
     }
 
     private static double distanceToPlane(Sphere sphere, double a, double b, double c, double d) {

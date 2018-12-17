@@ -1,4 +1,4 @@
-package by.epam.training.dmitrylishko.task01.model.exceptions;
+package by.epam.training.dmitrylishko.tasks.task01.model.exceptions;
 
 public class NegativeRadiusException extends Exception {
     public NegativeRadiusException() {
