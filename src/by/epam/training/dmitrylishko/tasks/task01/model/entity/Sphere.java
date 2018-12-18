@@ -1,5 +1,7 @@
 package by.epam.training.dmitrylishko.tasks.task01.model.entity;
 
+import by.epam.training.dmitrylishko.tasks.task01.model.exceptions.NegativeRadiusException;
+
 public class Sphere extends Point3D {
     public static final double DEFAULT_RADIUS = 1;
 
@@ -10,22 +12,22 @@ public class Sphere extends Point3D {
         radius = DEFAULT_RADIUS;
     }
 
-    public Sphere(double radius) {
+    public Sphere(double radius) throws NegativeRadiusException {
         super();
         setRadius(radius);
     }
 
-    public Sphere(double x, double y, double z, double radius) {
+    public Sphere(double x, double y, double z, double radius) throws NegativeRadiusException {
         super(x, y, z);
         setRadius(radius);
     }
 
-    public Sphere(Point3D point, double radius) {
+    public Sphere(Point3D point, double radius) throws NegativeRadiusException {
         super(point);
         setRadius(radius);
     }
 
-    public Sphere(Sphere sphere) {
+    public Sphere(Sphere sphere)throws NegativeRadiusException  {
         copy(sphere);
     }
 
@@ -33,11 +35,14 @@ public class Sphere extends Point3D {
         return radius;
     }
 
-    public void setRadius(double radius) {
+    public void setRadius(double radius) throws NegativeRadiusException {
+        if (radius <= 0) {
+            throw new NegativeRadiusException("Radius is incorrect");
+        }
         this.radius = radius;
     }
 
-    private void copy(Sphere sphere) {
+    private void copy(Sphere sphere) throws NegativeRadiusException {
         setRadius(sphere.radius);
         super.setLocation(sphere);
     }
