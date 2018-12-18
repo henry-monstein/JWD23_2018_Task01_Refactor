@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SphereTest {
-    private Orb orb;
+    private Sphere sphere;
 
     private static final double EPS = 0;
     private double x = 3;
@@ -16,66 +16,66 @@ public class SphereTest {
     private double radius = 5;
 
     @BeforeMethod
-    public void setUpOrb() {
-        orb = new Orb(x, y, z, radius);
+    public void setUpSphere() {
+        sphere = new Sphere(x, y, z, radius);
     }
 
     @AfterMethod
-    public void tearDownOrd() {
-        orb = null;
+    public void tearDownSphere() {
+        sphere = null;
     }
 
     @Test
     public void testDefaultConstructor() {
-        Orb defOrb = new Orb();
-        assertEquals(defOrb.getRadius(), Orb.DEFAULT_RADIUS, EPS);
+        Sphere defSphere=new Sphere();
+        assertEquals(defSphere.getRadius(), defSphere.DEFAULT_RADIUS, EPS);
     }
 
     @Test
     public void testRadiusConstructor() {
-        Orb orb1 = new Orb(radius);
-        assertEquals(orb1.getRadius(), radius, EPS);
+        Sphere sphere1 = new Sphere(radius);
+        assertEquals(sphere1.getRadius(), radius, EPS);
     }
 
     @Test
     public void testParameterConstructor() {
-        assertEquals(orb.getRadius(), radius, EPS);
+        assertEquals(sphere.getRadius(), radius, EPS);
     }
 
     @Test
     public void testDotConstructor() {
-        Orb orb1 = new Orb(new Dot3D(), radius);
-        assertEquals(orb1.getRadius(), radius, EPS);
+        Sphere sphere1 = new Sphere(new Point3D(), radius);
+        assertEquals(sphere1.getRadius(), radius, EPS);
     }
 
     @Test
     public void testCopyConstructor() {
-        Orb orb1 = new Orb(orb);
-        assertEquals(orb1, orb);
+        Sphere sphere1 = new Sphere(sphere);
+        assertEquals(sphere1, sphere);
     }
 
     @Test
     public void testGetRadius() {
-        assertEquals(orb.getRadius(), radius, EPS);
+        assertEquals(sphere.getRadius(), radius, EPS);
     }
 
     @Test
     public void testSetRadius() {
         double newRadius = 13;
-        orb.setRadius(newRadius);
-        assertEquals(orb.getRadius(), newRadius, EPS);
+        sphere.setRadius(newRadius);
+        assertEquals(sphere.getRadius(), newRadius, EPS);
     }
 
     @Test
     public void testEquals() {
-        Orb orb1 = new Orb();
-        Orb orb2 = new Orb();
-        assertTrue(orb1.equals(orb2));
+        Sphere sphere1=new Sphere();
+        Sphere sphere2=new Sphere();
+        assertTrue(sphere1.equals(sphere2));
     }
 
     @Test
     public void testHashCode() {
-        Orb orb1 = new Orb(x, y, z, radius);
-        assertEquals(orb1.hashCode(), orb.hashCode());
+        Sphere sphere1 = new Sphere(x, y, z, radius);
+        assertEquals(sphere1.hashCode(), sphere.hashCode());
     }
 }
