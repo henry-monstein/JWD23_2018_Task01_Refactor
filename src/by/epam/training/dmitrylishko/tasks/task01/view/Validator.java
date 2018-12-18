@@ -1,5 +1,7 @@
 package by.epam.training.dmitrylishko.tasks.task01.view;
 
+import by.epam.training.dmitrylishko.tasks.task01.view.logger.LoggerPrinter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class Validator {
                 try {
                     variablesLine[j] = Double.valueOf(splitline[j]);
                 } catch (NumberFormatException e) {
-//                    something into logger
+                    new LoggerPrinter().error(e.getMessage());
                     break;
                 }
             }
@@ -37,7 +39,7 @@ public class Validator {
                 try {
                     variablesLine[j] = Double.valueOf(splitline[j]);
                 } catch (NumberFormatException e) {
-//                    something into logger
+                    new LoggerPrinter().error(e.getMessage());
                     flag = false;
                 }
             }
