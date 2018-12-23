@@ -1,12 +1,24 @@
 # Eclipse
+.metadata
 .classpath
 .project
 .settings/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
 
 # Intellij
-.idea/
 *.iml
+.idea/
+*.ipr
 *.iws
+out/
+.idea_modules/
 
 # Mac
 .DS_Store
